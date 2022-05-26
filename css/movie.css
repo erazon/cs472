@@ -1,0 +1,143 @@
+body {
+    background-image: url(../images/background.png);
+    margin: 0%;
+    font-size: 8pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 24pt;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 3px #999999;
+}
+q {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+#banner {
+    background-image: url(../images/bannerbg.png);
+    background-repeat: repeat-x;
+}
+#banner>img {
+    margin-left: 200px;
+    height: 50px;
+}
+
+.main-content {
+    margin-top: 5px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 4px;
+    border-radius: 20px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    min-height: 100vh;
+    transform: translateX(-50%);
+    width: 800px;
+}
+
+.section-one {
+    width: 250px;
+    background-color: #A2B964;
+    float: right;
+    border-radius: 12px;
+}
+
+.section-two {
+    width: 550px;
+}
+
+#overview {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+}
+#overview>img {
+    width: 100%;
+    border-top-right-radius: 12px;
+}
+
+.section-divider {
+    width: 50%;
+    display: table-cell;
+}
+
+#logo {
+    border-top-left-radius: 16px;
+}
+
+.logo-section {
+    display: flex;
+}
+
+.logo-content {
+    background-image: url(../images/rbg.png);
+    background-repeat: repeat-x;
+    color: red;
+    flex-grow: 1;
+    font-size: 48pt;
+    font-weight: bold;
+}
+
+.card {
+    border: solid 2px gray;
+    margin: 5px;
+    padding: 8px;
+    border-radius: 10px;
+    background: #E8DC9B;
+}
+
+.user-paragraph {
+    margin-left: 5px;
+    display: inline-flex;
+    font-family: monospace;
+}
+
+footer {
+    background-color: #A2B964;
+    margin-bottom: 0px;
+    height: 20px;
+    text-align: center;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    position: absolute;
+    bottom: 0;
+    width: 72%;
+}
+
+footer p {
+    margin: 0px;
+}
+
+dt {
+    font-weight: bold;
+    margin-left: 10pt;
+    font-size: 15px;
+}
+
+dd {
+    font-size: 14px;
+    font-family: emoji;
+    margin-bottom: 10pt;
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0;
+}
+
+.validator {
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    text-align: right;
+}
+.validator img {
+    opacity: .5;
+}

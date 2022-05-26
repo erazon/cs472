@@ -1,0 +1,59 @@
+body {
+    background: #595647;
+    color: #EDECE8;
+    font-family:sans-serif;
+}
+
+h1 {
+    font-size: 36pt;
+    color: #9DC4F2;
+}
+
+p span {
+    color: #DFD880;
+}
+
+h2 {
+    color: #9DC4F2;
+}
+
+.mood img {
+    width: 200px;
+}
+
+a {
+    color: red;
+}
+
+span {
+    font-style: italic;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+dl {
+    margin-top: 5px;
+}
+
+dt {
+    color: yellow;
+}
+
+p::first-letter {
+    font-size: 25px;
+}
+
+ol { 
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+li {
+    flex: 0 0 auto;
+}
