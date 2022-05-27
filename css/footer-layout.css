@@ -6,8 +6,6 @@ body{
 .container{
     max-width: 1110px;
     margin: 0 auto;
-    /* padding-left: 15px;
-    padding-right: 15px; */
 }
 
 footer{
@@ -36,40 +34,27 @@ justify-content: flex-start;
 }
 
 .flex-end { 
-justify-content: flex-end; 
-}  
-.flex-end li {
-
+    justify-content: flex-end; 
 }
-
+.icon-custom{
+    color: white;
+}
 .center { 
-justify-content: center; 
-}  
-.center li {
-
+    justify-content: center; 
 }
-
 .space-between { 
-justify-content: space-between; 
-}  
-.space-between li {
-
+    justify-content: space-between; 
 }
-
 .space-around { 
-justify-content: space-around; 
-}
-.space-around li {
-
+    justify-content: space-around; 
 }
 
 .space-evenly { 
-justify-content: space-evenly; 
+    justify-content: space-evenly; 
 }
-.space-evenly li {
-   
+.tweets > li{
+    font-style: italic;
 }
-
 .flex-item {     
     flex: 1 1 0px;   
     padding: 5px;        
