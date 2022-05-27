@@ -38,6 +38,7 @@ justify-content: flex-start;
 }
 .icon-custom{
     color: white;
+    padding-right: 20px;
 }
 .center { 
     justify-content: center; 
@@ -112,10 +113,6 @@ ul.links > li >a{
 ul.quick-contact li img{
     position: relative;
     top: 5px;
-}
-ul.tweets li{
-    background: url(icon-twitter.jpg) left top no-repeat;
-    padding-left: 25px;
 }
 .comp{
     text-align: right;
