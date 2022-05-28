@@ -1,6 +1,3 @@
-var test = "hello";
-console.log(test);
-var x;
 // function hello(){
 //     var x = 10;
 // }
@@ -16,7 +13,7 @@ function test2(a){
     }
     return result;
 }
-console.log(test2(arr));
+//console.log(test2(arr));
 
 function find(a){
     for(let i=0;i<a.length;i++){
@@ -24,7 +21,7 @@ function find(a){
             return a[i];
     }
 }
-console.log(find(arr));
+//console.log(find(arr));
 
 function findIndex(a){
     for(let i=0;i<a.length;i++){
@@ -32,4 +29,68 @@ function findIndex(a){
             return i;
     }
 }
-console.log(findIndex(arr));
+//console.log(findIndex(arr));
+
+let objArr = [{a:1,b:1}, {a:2,b:2}]
+function sumOfArr(objArr){
+    let sum = 0;
+    objArr.forEach(element => {
+        sum += element.b;
+    });
+    return sum;
+}
+//console.log(sumOfArr(objArr));
+function reverseStr(str){
+    let chars = str.split('');
+    let len = str.length;
+    let i = 0;
+    while(i<(len/2)){
+        let temp = chars[i];
+        chars[i] = chars[len-i-1];
+        chars[len-i-1] = temp;
+        i++;
+    }
+    return chars.join('');
+}
+//console.log(reverseStr("string"));
+
+let mA = ["apple", "banana"];
+let result = mA.map((element, index, array)=> element.length >= 6);
+//console.log(result);
+let result2 = mA.filter((element, index, array)=> element.length >= 6);
+//console.log(result2);
+let result3 = mA.reduce(function(prev, element, index, array){
+    return prev+element;
+}, "");
+//console.log(result3);
+arr = [3,4,5];
+result = arr.reduce((prev, element, index, array)=>{
+    if(prev < element){
+        prev = element;
+    }
+    return prev;
+}, 0);
+//console.log(result);
+
+let arry = [{name:"peter",salary:100},{name:"alice",salary:200},{name:"sara",salary:400}];
+result = arry.reduce((prev, element, index, array)=>{
+    prev += element.salary;
+    return prev;
+}, 0);
+//console.log(result);
+
+result = arry.reduce((prev, element, index, array)=>{
+    prev.totalSalary += element.salary;
+    return prev;
+}, {totalSalary:0});
+//console.log(result);
+
+arry = {a:1,b:2,c:3};
+function getKeys(obj){
+    let result = []
+    for(let key in obj){
+        result.push(key);
+    }
+    return result;
+}
+console.log(getKeys(arry));
