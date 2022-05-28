@@ -34,9 +34,11 @@ function myFunctionTest(expected, found) {
   
   // 3. checking the input character is vowel or not
   function isVowel(c){
+      c = c.toLowerCase();
       return (c==='a' || c==='e' || c==='i' || c==='o' || c==='u')
   }
   console.log("Expected output of isVowel('a') is true  " + myFunctionTest(true, isVowel('a')));
+  console.log("Expected output of isVowel('A') is true  " + myFunctionTest(true, isVowel('A')));
   console.log("Expected output of isVowel('b') is false  " + myFunctionTest(false, isVowel('b')));
   
   // 4. sum() and multiply function

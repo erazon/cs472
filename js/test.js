@@ -93,4 +93,37 @@ function getKeys(obj){
     }
     return result;
 }
-console.log(getKeys(arry));
+//console.log(getKeys(arry));
+
+arr = [1, {a:1}, 3];
+let arr2 = [];
+for(let i=0;i<arr.length;i++){
+    arr2.push(arr[i]);
+}
+arr3 = arr.map(x=>x);
+arr2[1].a = 6;
+arr3[1].a = 10;
+//console.log(arr);
+
+// clone an object
+let obj = {a:1, b:"string", c:[1,2], d:{a:1,b:2}};
+for(key in obj){
+    //console.log(key);
+}
+
+// find an element
+obj = {a:1, b:"string", c:[1,2]};
+function findVal(obj, val){
+    for(key in obj){
+        if(Array.isArray(obj[key])){
+            for(key2 in obj[key]){
+                if(obj[key][key2] == val) return true;
+            }
+        }
+        else{
+            if(obj[key] == val) return true;
+        }
+    }
+    return false;
+}
+console.log(findVal(obj, 3));
