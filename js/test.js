@@ -107,9 +107,22 @@ arr3[1].a = 10;
 
 // clone an object
 let obj = {a:1, b:"string", c:[1,2], d:{a:1,b:2}};
+obj2 = {};
 for(key in obj){
-    //console.log(key);
+    obj2[key] = obj[key];
 }
+obj2.a=5;
+//console.log(obj);
+
+// another way to clone an object
+//obj3 = Object.assign({}, obj);
+//obj3.a=10;
+//console.log(obj);
+
+// another way to clone an object
+// obj4 = {...obj};
+// obj4.a=15;
+// console.log(obj);
 
 // find an element
 obj = {a:1, b:"string", c:[1,2]};
@@ -126,4 +139,75 @@ function findVal(obj, val){
     }
     return false;
 }
-console.log(findVal(obj, 3));
+//console.log(findVal(obj, 3));
+
+
+/*function test3(){
+    //x = 4;
+    console.log(x);
+    if(x>1){
+        var x = 3;
+    }
+    var x = 9;
+    let y = 10;
+    {
+        let y = 20;
+    }
+    console.log(y);
+    console.log(x);
+}
+var x = 5;
+test3();
+console.log(x);*/
+let x = 10;
+function test4(){
+    //console.log(x);
+}
+test4();
+let obj1 = {a:1, b:{c:2}};
+let obj3 = {...obj1};
+obj1.b.c = 10;
+//console.log(obj1, obj3);
+
+let arr4 = [{a:1,b:2}, {c:3,d:4}];
+let arr5 = []
+arr4.forEach(function(item, idx){
+    //console.log(idx, item);
+    arr5.push({...item});
+});
+arr4[0].a = 10;
+//console.log(arr4, arr5);
+
+function test5(a, b, ...other){
+    //console.log(arguments);
+    for(let i=0;i<arguments.length;i++){
+        //console.log(arguments[i]);
+    }
+    /*arguments.forEach(function(idx, item){
+        console.log(item);
+    });*/
+    //console.log(a,b);
+    //console.log(other);
+}
+test5(1,'str',3,4);
+let obj5 = {a:1, b:2, a:2};
+const {a,b} = obj5;
+//console.log(obj5, a,b);
+
+var x1 = 10;
+function test6(){
+    //console.log(x1);
+    x1 = 2;
+    if(x1>1){
+        var x1 = 4;
+        let x2 = 9;
+    }
+    //console.log(x2); // error
+    //console.log(x1);
+}
+test6();
+var x3=10;
+var f1 = function(){
+    console.log(x3);
+}
+f1();

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(()=>{
+            $("#btn").click(()=>{
+                let label = document.createElement('label');
+                let inputObj = $("input[name='tf']");
+                label.innerHTML = inputObj.val();
+                inputObj.replaceWith(label);
+
+                label = document.createElement('label');
+                inputObj = $("input[name='radio']:checked");
+                label.innerHTML = inputObj.val();
+                inputObj.replaceWith(label);
+
+                label = document.createElement('label');
+                inputObj = $("input[name='checkbox']:checked");
+                label.innerHTML = inputObj.val();
+                inputObj.replaceWith(label);
+
+                label = document.createElement('label');
+                inputObj = $("select[name='dd']");
+                label.innerHTML = $("select[name='dd'] option:selected").text();
+                inputObj.replaceWith(label);
+
+                label = document.createElement('label');
+                inputObj = $("textarea[name='ta']");
+                label.innerHTML = inputObj.val();
+                inputObj.replaceWith(label);
+            });
+            let ul = document.createElement("ul");
+            ul.innerHTML = "<li>hello</li><li>world</li>";
+            $("#div1").append(ul);
+        });
+    </script>
+</head>
+<body>
+    TextField: <input name="tf" type="text" /><br/>
+    Radio: <input name="radio" type="radio" /><br/>
+    Checkbox: <input name="checkbox" type="checkbox" value="checked" /><br/>
+    Dropdown: <select id="dd" name="dd">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+    </select><br/>
+    TextArea: <textarea name="ta"></textarea><br/>
+    <input id="btn" type="button" value="Submit" />
+    <div id="div1"></div>
+</body>
+</html>
