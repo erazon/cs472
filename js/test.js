@@ -208,6 +208,12 @@ function test6(){
 test6();
 var x3=10;
 var f1 = function(){
-    console.log(x3);
+    //console.log(x3);
 }
 f1();
+
+// create an object and returns sum of the properties
+obj = {a:1, b:2, c:function(){
+    return this.a + this.b;
+}};
+console.log(obj.c());

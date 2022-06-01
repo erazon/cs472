@@ -25,23 +25,17 @@
 // 1. 
 // let grapes = "green"; 
 
-  
-
 // function fruits(){ 
-
 //     return function(message){ 
-
 //         return grapes; 
+//     }
+// }
 
-//     } 
-
-// } 
-
-// console.log(fruits()()); 
+// console.log(fruits()()); // "green" - outer grapes variable still persists in inner functions
 
 
 // 2. 
-// let x = 10; 
+// let x = 10;
 
 // function globalVar(){ 
 
@@ -57,9 +51,7 @@
 
 // let fn = globalVar(); 
 
-// console.log(fn ()); 
-
-
+// console.log(fn ()); // 20 - x is changed at line 50 and then function called happen in line 54
 
  
 
@@ -78,7 +70,7 @@
 
 // let sportFn = sport("Hello"); 
 
-// console.log(sportFn ()); 
+// console.log(sportFn ()); // undefined, because inner method parameter not provided
 
 
 
@@ -99,7 +91,7 @@
 
 // } 
 
-// console.log(test(2)()) 
+// console.log(test(2)()) // 11 - x is reassigned 10, then increment thre x++ which returns 11, ++x would return 12
  
  
 
@@ -111,11 +103,11 @@
 //     function seat(){ 
 
 //         let color = "brown"; 
-//         console.log(color)//___________
+//         console.log(color) [inner method is never called]
 
 //     } 
 
-//     console.log(color)//___________
+//     console.log(color)//white, color variable still assigned to white
 
 // } 
 
@@ -126,15 +118,15 @@
 // function department(){ 
 
 //     let numberOfDepartments = 5; 
-//     console.log(numberOfDepartments);
+//     console.log(numberOfDepartments); // 5, obviously
 //     function software(){ 
 
 //         let language = "javascript"; 
-//         console.log(language)
+//         console.log(language) // [inner method is never called]
 
 //     } 
 
-//     console.log(language) 
+//     console.log(language) // undefined, there's no variable was defined in outer scope
 
 // } 
 
@@ -148,15 +140,15 @@
 // function department(language){ 
 
 //     let numberOfDepartments = 5; 
-//     console.log(numberOfDepartments)
+//     console.log(numberOfDepartments) // 5, obviously
 //     function software(){ 
 
 //         let language = "javascript"; 
-//         console.log(language);
+//         console.log(language); // [inner method is never called]
 
 //     } 
 
-//     console.log(language) 
+//     console.log(language) // java, this values passed to this function
 
 // } 
 
