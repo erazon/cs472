@@ -216,4 +216,9 @@ f1();
 obj = {a:1, b:2, c:function(){
     return this.a + this.b;
 }};
-console.log(obj.c());
+//console.log(obj.c());
+
+const c1 = {a:1, b:2};
+let c2 = c1;
+c2.c = 10;
+console.log(c1);
