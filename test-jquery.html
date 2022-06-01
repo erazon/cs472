@@ -10,14 +10,14 @@
         $(document).ready(()=>{
             $("#btn").click(()=>{
                 let label = document.createElement('label');
-                let inputObj = $("input[name='tf']");
+                let inputObj = $("input[name='name']");
                 label.innerHTML = inputObj.val();
                 inputObj.replaceWith(label);
 
                 label = document.createElement('label');
-                inputObj = $("input[name='radio']:checked");
+                inputObj = $("input[name='gender']:checked");
                 label.innerHTML = inputObj.val();
-                inputObj.replaceWith(label);
+                $('#gender').replaceWith(label);
 
                 label = document.createElement('label');
                 inputObj = $("input[name='checkbox']:checked");
@@ -41,8 +41,9 @@
     </script>
 </head>
 <body>
-    TextField: <input name="tf" type="text" /><br/>
-    Radio: <input name="radio" type="radio" /><br/>
+    Name: <input name="name" type="text" /><br/>
+    Gender: <span id="gender"><input name="gender" type="radio" value="Male" />Male
+    <input name="gender" type="radio" value="Female" />Female</span><br/>
     Checkbox: <input name="checkbox" type="checkbox" value="checked" /><br/>
     Dropdown: <select id="dd" name="dd">
         <option>Option 1</option>
