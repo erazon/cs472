@@ -1,0 +1,53 @@
+.center-img img{
+    height: 30px;
+    width: 30px;
+}
+.control{
+    margin-top: 10px;
+}
+.control input, button{
+    margin: 5px;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.footer div{
+    align-self: center;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.header img{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    object-fit:cover;
+}
+.main{
+    padding: 10px;
+}
+.menu{
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content:space-evenly;
+    padding: 5px 0;
+}
+.result{
+    display: flex;
+    justify-content: space-between;
+    margin-top:20px;
+}
+.result button{
+    align-self: center;
+}
+#select-left{
+    width: 40%;
+}
+#select-right{
+    width: 40%;
+}

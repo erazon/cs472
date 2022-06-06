@@ -221,4 +221,103 @@ obj = {a:1, b:2, c:function(){
 const c1 = {a:1, b:2};
 let c2 = c1;
 c2.c = 10;
-console.log(c1);
+//console.log(c1);
+
+sum = [{x: 1}, {x:2}, {x:3}].reduce(
+    (accumulator, currentValue)=>accumulator + currentValue.x,0);
+//console.log(sum);
+
+sum = [1, 2, 3, 4].reduce((accumulator, currentValue)=>accumulator+currentValue);
+// console.log(sum);
+
+function foo() {
+    x = 4;
+    //console.log(x);
+}
+foo();
+//console.log(x);
+
+function a1() {
+    // console.log(x2); // consult Global for x and print 20 from Global
+}
+function b1() {
+    var x2 = 10;
+    a1(); // consult Global for a
+}
+var x2 = 20;
+b1();
+
+function b2() {
+    function a() {
+        //console.log(x3);
+    }
+    var x3 = 10;
+    a();
+}
+var x3 = 20;
+b2();
+
+// function f() {
+//     var a = 1, b = 20, c;
+//     console.log(a + " " + b + " " + c);
+//     function g() {
+//     var b = 300, c = 4000;
+//     console.log(a + " " + b + " " + c);
+//     a = a + b + c;
+//     console.log(a + " " + b + " " + c);
+//     }
+//     console.log(a + " " + b + " " + c);
+//     g();
+//     console.log(a + " " + b + " " + c);
+// }
+// f();
+
+// var x4 = 10;
+// function main(){
+//     console.log("x1 is:"+ x4);
+//     x4 = 20;
+//     console.log("x2 is:" + x4);
+//     if(x>0){
+//         var x4 = 30;
+//         console.log("x3 is:"+ x4);
+//     }
+//     console.log("x4 is:"+ x4);
+//     var x4 = 40;
+//     var f = function(x4){
+//         console.log("x5 is:"+ x4);
+//     };
+
+//     f(50);
+//     console.log("x6 is:"+ x4);
+// }
+// main();
+// console.log("x7 is:"+ x4);
+
+// console.log(this);
+// function foo(){
+//     console.log(this);
+// }
+// foo();
+function sayHi() {
+    //console.log(this);
+}
+sayHi();
+
+// constructor example
+// function user(name){
+//     this.name = name;
+// }
+// let u1 = new user("John");
+// console.log(u1.name);
+
+/*function Person(){
+    console.log(this);
+    this.university = "MIU";
+    this.year = 2022;
+}
+const faculty1 = new Person();
+Person.prototype.greet = function(){
+    return "Hi, " + this.university + "!";
+}
+const greeting = faculty1.greet();
+console.log(greeting);*/

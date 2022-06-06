@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style type="text/css">
+        .center-img img{
+            height: 30px;
+            width: 30px;
+        }
+        .control{
+            margin-top: 10px;
+        }
+        .control input, button{
+            margin: 5px;
+        }
+        .footer{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .footer div{
+            align-self: center;
+        }
+        .header{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .header img{
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+            object-fit:cover;
+        }
+        .main{
+            padding: 10px;
+        }
+        .menu{
+            background-color: blue;
+            color: white;
+            display: flex;
+            justify-content:space-evenly;
+            padding: 5px 0;
+        }
+        .result{
+            display: flex;
+            justify-content: space-between;
+            margin-top:20px;
+        }
+        .result button{
+            align-self: center;
+        }
+        #select-left{
+            width: 40%;
+        }
+        #select-right{
+            width: 40%;
+        }
+    </style>
+    <script>
+        let array = [{plant:"daffodil",color:"yellow"},
+            {plant:"zinnia",color:"purple"},
+            {plant:"chrysanthumum",color:"pink"},
+            {plant:"lily",color:"pink"}];
+
+        $(function(){
+
+            // B-1
+            let options = "";
+            for(let item of array){
+                let option = "";
+                for(let key in item){
+                    option += key + "-" + item[key] + " ";
+                }
+                options += "<option>" + option + "</option>";
+            }
+            $('#select-left').html(options);
+
+            // B-2
+            $('#move-btn').click(function(){
+                let selected = $('#select-left option:selected');
+                for(let option of selected){
+                    $('#select-right').append(option);
+                }
+            });
+
+            // B-3
+            $('#delay-btn').click(function(){
+                let idx = parseInt($('#delay-text').val());
+                setTimeout(function(){
+                    $('#select-left :nth-child('+(idx+1)+')').css('color', 'blue');
+                    //$('#select-left :nth-child('+(idx+1)+')').css('color', array[idx].color);
+                }, 1000);
+            });
+
+            // B-4
+            $('#filter-btn').click(function(){
+                let filterText = $('#filter-text').val();
+                filterText = filterText.replace(':', '-');
+                console.log(filterText);
+                let options = $('#select-left option');
+                for(let option of options){
+                    if($(option).val().indexOf(filterText) == -1){
+                        $(option).remove();
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="menu">
+            <div>Home</div>
+            <div>Mission</div>
+            <div>Career</div>
+            <div>ContactUs</div>
+        </div>
+        <div class="header">
+            <img src="flowers.png" alt="flowers" />
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore culpa sequi esse debitis, quas quaerat voluptatem, nulla beatae nostrum ex maiores molestias eum ab minus suscipit perferendis obcaecati aspernatur omnis!
+        </p>
+        <div class="control">
+            <input id="delay-text" type="text" />
+            <button id="delay-btn">Delay Color</button>
+            <input id="filter-text" type="text" />
+            <button id="filter-btn">Filter</button>
+        </div>
+        <div class="result">
+            <select id="select-left" multiple></select>
+            <button id="move-btn">Move</button>
+            <select id="select-right" multiple></select>
+        </div>
+        <div class="footer">
+            <div>****</div>
+            <div class="center-img">
+                <div>****</div>
+                <img src="flowers.png" alt="flowers" />
+                <div>****</div>
+            </div>
+            <div>****</div>
+        </div>
+    </div>
+</body>
+</html>

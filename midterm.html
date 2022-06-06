@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#toggle').click(function(){
+                $('#myDIV2').toggle();
+            })
+            $('#myDIV').attr('id', 'myDIV2');
+            $('#myDIV2').removeClass("myClass");
+            $('#myDIV2').addClass("myClass2");
+            $("ul li:last").remove();
+            let list = $('<ul>');
+            $('td').each(function(idx){
+                list.append("<li>"+this.innerHTML+"</li>");
+            });
+            $('table').after(list);
+        });
+    </script>
+</head>
+<body>
+    <input id="toggle" type="button" value="Display" />
+    <div id="myDIV" class="myClass" name="myName">
+        <div id="innerDIV">
+            <p id="firstP"> First P </p>
+            <p id="secondP"> Second P </p>
+        </div>
+    </div>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <table>
+        <tr>
+        <td>First Row Col 1</td>
+        <td>First Row Col 2</td>
+        </tr>
+        <tr>
+        <td>Second Row Col 1</td>
+        <td>Second Row Col 2</td>
+        </tr>
+        </table>
+    
+</body>
+</html>
