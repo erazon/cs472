@@ -321,3 +321,13 @@ Person.prototype.greet = function(){
 }
 const greeting = faculty1.greet();
 console.log(greeting);*/
+
+/*setTimeout(()=>{
+    console.log('timeout')
+}, 0);
+setImmediate(()=>{
+    console.log('immediate')
+});
+process.nextTick(()=>{
+    console.log('next tick');
+});*/
