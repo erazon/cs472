@@ -1,10 +1,12 @@
-const express = require('express');
-const path = require('path');
+import express, { json, urlencoded } from 'express';
+import { join } from 'path';
+import { renderFile } from 'ejs';
+
 const app = express();
 // npm run dev
 
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+app.use(json());
+app.use(urlencoded({extended:false}));
 
 app.listen(3000, () => {
     console.log('Your Server is running on 3000');
@@ -25,7 +27,7 @@ app.get('/', function(req, res, next){
 app.get("/add",function(req,res,next){
     console.log(++client.add);
     //res.send('<form action="/product" method="post"><input name="title"/><input type="submit" /></form>');
-    res.sendFile(path.join(__dirname,'dom.html'));
+    res.sendFile(join(__dirname,'dom.html'));
 });
 
 app.post('/add', function(req, res, next) {
@@ -70,5 +72,5 @@ app.use((err, req, res, next)=>{
 
 app.use((req, res, next)=>{
     console.log(++client.notfound);
-    res.status(404).sendFile(path.join(__dirname, '404.html'));
+    res.status(404).sendFile(join(__dirname, '404.html'));
 });
