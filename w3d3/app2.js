@@ -1,14 +1,14 @@
-import express, { json, urlencoded } from "express";
-import { renderFile } from 'ejs';
-import { join } from 'path';
+const express = require("express");
+const ejs = require('ejs');
+const path = require('path');
 const app = express();
 
 
-app.use(json());
-app.use(urlencoded({extended:false}));
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 app.set('view engine', 'html');
-app.engine('html', renderFile);
-app.set('views', join(__dirname, "template"));
+app.engine('html', ejs.renderFile);
+app.set('views', path.join(__dirname, "templates"));
 
 app.listen(3000, ()=>{
     console.log('app2.js service started');
