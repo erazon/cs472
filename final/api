@@ -1,0 +1,32 @@
+app.get("/hello",function(req,res,next){
+
+})
+
+app.post("/submit",function(req,res,next){
+
+})
+
+app.use("/submit",function(req,res,next){
+
+})
+res.sendFile(path.join(__dirname,"index.html"));
+
+res.cookie("mybody",req.body);
+res.redirect("/home")
+req.cookies.mybody
+res.render("myPage")
+
+//Ajax Request
+$.ajax("/hello", {
+    "type": "POST",
+    "data": {
+        "height": 180,
+        "password": "abcdef"
+    },
+}).done(function (response) {
+    console.log(response)
+})
+    .fail(function () {
+        console.log("fail")
+    });
+}
